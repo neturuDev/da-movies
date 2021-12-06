@@ -1,0 +1,36 @@
+.navigation{
+  .heading h1{
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 1px solid #fff;
+    display: inline-block;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .nav-block{
+    margin-left: -0.5rem;
+    .menu-item{
+      width: 11rem;
+      border: 2px solid transparent;
+      padding: 0.5rem;
+      border-radius: 3px;
+      text-transform: capitalize;
+      display: flex;
+      align-items: center;
+      color: #878787;
+      svg{
+        height: 0.85em;
+        margin-left: 5px;
+        margin-top: 5px;
+        color: transparent;
+      }
+      &:hover, &:focus{
+        border-color:#ff7900;
+        color: #fff;
+        svg{
+          color: #ff7900;
+        }
+      }
+    }
+  }
+}
