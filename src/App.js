@@ -6,6 +6,7 @@ import './App.scss';
 
 function App() {
   const [allMovies, setAllMovies] = useState([]);
+  
 
   const getAllMovies = async () => {
     try {
@@ -34,10 +35,15 @@ function App() {
 
   allGenres.sort();
 
+  const [currentFilter, setCurrentFilter] = useState(allGenres[0]);
+
+  const setFilterHandler = (filter) => {
+    setCurrentFilter(filter);
+  }
+
   return (
     <div className="main-container">
-      <Navigation menuItems={allGenres}/>
-      {/* {allGenres.map((item) => <div>{item}</div>)} */}
+      <Navigation menuItems={allGenres} filter={currentFilter} setFilter={setFilterHandler}/>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ErrorBoundary from './components/ErrorBoundary/index';
+import initElementsNavigation from 'elements-navigation';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+initElementsNavigation();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

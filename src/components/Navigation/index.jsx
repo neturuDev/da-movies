@@ -1,12 +1,21 @@
+import { useState } from 'react';
 import NavItem from './NavItem';
 import './index.scss';
 
-const Navigation = ({menuItems}) => {
+const Navigation = ({menuItems, filter, setFilter}) => {
+
   return(
     <div className="navigation">
       <div className="heading"><h1>Filmer</h1></div>
-      <nav className="nav-block">
-        {menuItems.map((item) => <NavItem item={item} key={item}/>)}
+      <nav className="nav-block" data-en-vertical>
+        {menuItems.map((item, i) => (
+          <NavItem 
+            item={item} 
+            key={item} 
+            active={filter === item}
+            onFocus={e => e.preventDefault() || setFilter(item)}
+            />
+        ))}
       </nav>
     </div>
   )
