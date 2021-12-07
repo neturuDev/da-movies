@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import FilmsList from './components/FilmsList';
+import FilmDetail from './components/FilmDetail';
 import './App.scss';
 
 
 
 function App() {
   const [allMovies, setAllMovies] = useState([]);
+  const [currentFilm, setCurrentFilm] = useState(null);
   
 
   const getAllMovies = async () => {
@@ -44,12 +46,20 @@ function App() {
     setCurrentFilter(filter);
   }
 
+  const setFilmHandler = (film) => {
+    setCurrentFilm(film);
+  }
+  const clearFilmHandler = () => {
+    setCurrentFilm(null);
+  }
+
   const filteredFilms = allMovies.filter(film => film.genre_ids.includes(currentFilter)).sort();
 
   return (
-    <div className="main-container">
+    <div className="main-container" data-en-horizontal>
       <Navigation menuItems={allGenres} filter={currentFilter} setFilter={setFilterHandler}/>
-      <FilmsList films={filteredFilms} />
+      <FilmsList films={filteredFilms} setFilm={setFilmHandler}/>
+      {currentFilm && <FilmDetail film={currentFilm} />}
     </div>
   );
 }

@@ -4,9 +4,8 @@ const FilmCard = ({title, poster, onSelect}) => {
       href="#" 
       className="film-card" 
       onClick={onSelect} 
-      style={{backgroundImage: `url(${poster})`}}
       >
-      
+      <div className="card-content" style={{backgroundImage: `url(${poster})`}}></div>
     </a>
   )
 }

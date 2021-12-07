@@ -14,7 +14,7 @@
     .menu-item{
       text-decoration: none;
       width: 11rem;
-      border: 2px solid transparent;
+      border: 3px solid transparent;
       padding: 0.5rem;
       border-radius: 3px;
       text-transform: capitalize;
@@ -29,7 +29,6 @@
         color: transparent;
       }
       &:focus, &[data-en-active]{
-        outline: none;
         color: #fff;
         svg{
           color: #ff7900;
