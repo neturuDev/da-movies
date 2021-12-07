@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
+import FilmsList from './components/FilmsList';
 import './App.scss';
 
 
@@ -35,15 +36,20 @@ function App() {
 
   allGenres.sort();
 
-  const [currentFilter, setCurrentFilter] = useState(allGenres[0]);
+  
+
+  const [currentFilter, setCurrentFilter] = useState('action');
 
   const setFilterHandler = (filter) => {
     setCurrentFilter(filter);
   }
 
+  const filteredFilms = allMovies.filter(film => film.genre_ids.includes(currentFilter)).sort();
+
   return (
     <div className="main-container">
       <Navigation menuItems={allGenres} filter={currentFilter} setFilter={setFilterHandler}/>
+      <FilmsList films={filteredFilms} />
     </div>
   );
 }

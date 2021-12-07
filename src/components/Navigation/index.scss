@@ -1,12 +1,14 @@
 .navigation{
-  .heading h1{
-    color: #fff;
-    text-transform: uppercase;
-    border-bottom: 1px solid #fff;
-    display: inline-block;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
+  .heading {
+    h1{
+      color: #fff;
+      text-transform: uppercase;
+      border-bottom: 1px solid #fff;
+      display: inline-block;
+      font-size: 1rem;
+    }
+    margin-bottom: 3rem;
+  } 
   .nav-block{
     margin-left: -0.5rem;
     .menu-item{
@@ -28,11 +30,13 @@
       }
       &:focus, &[data-en-active]{
         outline: none;
-        border-color:#ff7900;
         color: #fff;
         svg{
           color: #ff7900;
         }
+      }
+      &:focus{
+        border-color:#ff7900;
       }
     }
   }

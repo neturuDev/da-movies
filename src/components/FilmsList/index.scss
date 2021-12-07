@@ -1,0 +1,23 @@
+.films-list{
+  display: flex;
+  flex-flow: row wrap;
+  
+  padding: 3.5rem 0 1rem 2rem;
+  
+  .film-card{
+    width: 10vw;
+    margin: 1rem;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    &:before{
+      content: "";
+      display: block;
+      padding-top: 150%;
+    }
+    // img{
+    //   width: 100%;
+    // }
+  }
+}
