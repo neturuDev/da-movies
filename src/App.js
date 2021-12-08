@@ -6,9 +6,6 @@ import './App.scss';
 
 
 
-
-
-
 function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [currentFilm, setCurrentFilm] = useState(null);
@@ -32,17 +29,10 @@ function App() {
     getAllMovies();
   }, []);
 
-  const closeDetailHandler = () => {
-    if (detailIsOpen) {
-      console.log("AAAA")
-      console.log(detailIsOpen)
-    }
-  }
 
   const keyDownHandler = (event) => {
     if ((event.code === 'KeyB') && detailIsOpen) {
-      console.log("AAAA")
-      console.log(detailIsOpen)
+      setDetailIsOpen(false);
     }
   }
 
@@ -76,11 +66,10 @@ function App() {
     setCurrentFilm(film);
     setDetailIsOpen(true);
   }
-  const clearFilmHandler = () => {
-    setCurrentFilm(null);
-  }
+
 
   const filteredFilms = allMovies.filter(film => film.genre_ids.includes(currentFilter)).sort();
+  
 
   return (
     <div className="off-canvas-container">
@@ -88,7 +77,7 @@ function App() {
         <Navigation menuItems={allGenres} filter={currentFilter} setFilter={setFilterHandler}/>
         <FilmsList films={filteredFilms} setFilm={setFilmHandler}/>
       </div>
-      {currentFilm && <FilmDetail isOpen={detailIsOpen} film={currentFilm} />}
+      <FilmDetail isOpen={detailIsOpen} film={currentFilm} />
     </div>
     
   );

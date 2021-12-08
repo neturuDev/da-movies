@@ -7,9 +7,9 @@
   display: flex;
   position: relative;
   backface-visibility: hidden;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease 0.1s;
   &.shifted{
     transform: translateX(-68vw);
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease 0.1s;
   }
 }

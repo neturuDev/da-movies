@@ -6,7 +6,7 @@ const FilmsList = ({films, setFilm}) => {
   return(
     <div className="films-list" data-en-active>
       <Grid>
-        {films.map((film, idx) => {
+        {films.map((film) => {
           return (
             <FilmCard 
               title={film.title} 

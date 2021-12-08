@@ -7,7 +7,7 @@ const Navigation = ({menuItems, filter, setFilter}) => {
   return(
     <div className="navigation">
       <div className="heading"><h1>Filmer</h1></div>
-      <nav className="nav-block" data-en-vertical data-en-default>
+      <nav className="nav-block" data-en-vertical>
         {menuItems.map((item, i) => (
           <NavItem 
             item={item} 
