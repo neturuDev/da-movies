@@ -1,14 +1,14 @@
 import FilmContent from './FilmContent';
+import ReactDelayed from 'react-delayed';
 import './index.scss';
 
 const FilmDetail = ({film, isOpen}) => {
 
-
-
   return(
     <div className={`film-detail ${isOpen ? "is-open" : ""}`}>
-      {isOpen && <FilmContent film={film} isOpen={isOpen} />}
-      
+      <ReactDelayed mounted={isOpen} unmountAfter={200}>
+        <FilmContent film={film} isOpen={isOpen} />
+      </ReactDelayed>
     </div>
   )
 }

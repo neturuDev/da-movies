@@ -8,10 +8,10 @@
   backface-visibility: hidden;
   background-color: #1a1a1a;
   transform: translateX(70vw);
-  transition: transform 0.5s ease 0.1s;
+  transition: transform 0.5s ease;
   &.is-open{
     transform: translate(0, 0);
-    transition: transform 0.5s ease 0.1s;
+    transition: transform 0.5s ease;
   }
   padding: 3.2rem 5.6rem 3.2rem 10rem;
   // padding: 4vh 5vw 4vh 8vw;
