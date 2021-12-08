@@ -1,20 +1,19 @@
 .film-detail{
   top: 0;
   right: 0;
-  width: 65vw;
+  width: 70vw;
   height: 100%;
   position: fixed;
   z-index: 10;
   backface-visibility: hidden;
   background-color: #1a1a1a;
-  transform: translateX(70vw);
+  transform: translateX(80vw);
   transition: transform 0.5s ease;
   &.is-open{
     transform: translate(0, 0);
     transition: transform 0.5s ease;
   }
-  padding: 3.2rem 5.6rem 3.2rem 10rem;
-  // padding: 4vh 5vw 4vh 8vw;
+  padding: 3.2rem 4.5vw 3.2rem 8vw;
   .film-heading{
     font-size: 3rem;
     margin-bottom: 2.5rem;
@@ -22,7 +21,7 @@
   .data-wrapper{
     display: flex;
     .film-data{
-      width: 70%;
+      width: 60%;
       margin-right: 3rem;
       .film-data-items{
         display: flex;
@@ -61,7 +60,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 2rem 0;
+          padding: 1.7rem 0;
           border-radius: 7px;
           font-size: 1.1rem;
           text-transform: uppercase;
@@ -84,8 +83,15 @@
       }
     }
     .overview{
-      width: 30%;
+      width: 40%;
     }
-    
+    @media screen and (min-width: 1500px) {
+      .film-data{
+        width: 68%;
+      }
+      .overview{
+        width: 32%;
+      }
+    }
   }
 }
