@@ -6,6 +6,9 @@ import './App.scss';
 
 
 
+
+
+
 function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [currentFilm, setCurrentFilm] = useState(null);
@@ -28,6 +31,28 @@ function App() {
   useEffect(() => {
     getAllMovies();
   }, []);
+
+  const closeDetailHandler = () => {
+    if (detailIsOpen) {
+      console.log("AAAA")
+      console.log(detailIsOpen)
+    }
+  }
+
+  const keyDownHandler = (event) => {
+    if ((event.code === 'KeyB') && detailIsOpen) {
+      console.log("AAAA")
+      console.log(detailIsOpen)
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("keydown", keyDownHandler);
+    return () => {
+      window.removeEventListener("keydown", keyDownHandler);
+    };
+  }, [detailIsOpen]);
+  
 
   const allGenres = [];
 
