@@ -5,4 +5,11 @@
 .main-container{
   padding: 3rem;
   display: flex;
+  position: relative;
+  backface-visibility: hidden;
+  transition: transform 0.5s ease;
+  &.shifted{
+    transform: translateX(-68vw);
+    transition: transform 0.5s ease;
+  }
 }

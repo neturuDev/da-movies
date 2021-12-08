@@ -59,7 +59,7 @@ function App() {
 
   return (
     <div className="off-canvas-container">
-      <div className="main-container" data-en-horizontal>
+      <div className={`main-container ${detailIsOpen ? "shifted" : ""}`} data-en-horizontal>
         <Navigation menuItems={allGenres} filter={currentFilter} setFilter={setFilterHandler}/>
         <FilmsList films={filteredFilms} setFilm={setFilmHandler}/>
       </div>
