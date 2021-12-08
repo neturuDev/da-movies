@@ -9,6 +9,7 @@ import './App.scss';
 function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [currentFilm, setCurrentFilm] = useState(null);
+  const [detailIsOpen, setDetailIsOpen] = useState(false);
   
 
   const getAllMovies = async () => {
@@ -48,6 +49,7 @@ function App() {
 
   const setFilmHandler = (film) => {
     setCurrentFilm(film);
+    setDetailIsOpen(true);
   }
   const clearFilmHandler = () => {
     setCurrentFilm(null);
@@ -56,11 +58,14 @@ function App() {
   const filteredFilms = allMovies.filter(film => film.genre_ids.includes(currentFilter)).sort();
 
   return (
-    <div className="main-container" data-en-horizontal>
-      <Navigation menuItems={allGenres} filter={currentFilter} setFilter={setFilterHandler}/>
-      <FilmsList films={filteredFilms} setFilm={setFilmHandler}/>
-      {currentFilm && <FilmDetail film={currentFilm} />}
+    <div className="off-canvas-container">
+      <div className="main-container" data-en-horizontal>
+        <Navigation menuItems={allGenres} filter={currentFilter} setFilter={setFilterHandler}/>
+        <FilmsList films={filteredFilms} setFilm={setFilmHandler}/>
+      </div>
+      {currentFilm && <FilmDetail isOpen={detailIsOpen} film={currentFilm} />}
     </div>
+    
   );
 }
 
