@@ -16,12 +16,12 @@ function App() {
     try {
       const response = await fetch('https://raw.githubusercontent.com/bdiadiun/technical-assignments/main/movieDataCollection.json');
       if (!response.ok) {
-        throw new Error('Ответ сети был не ok.');
+        throw new Error('Network response is not okay');
       }
       const allMovies = await response.json();
       setAllMovies(allMovies);
     } catch (error) {
-      console.log('Возникла проблема с вашим fetch запросом: ', error.message);
+      console.log('There is a problem with your fetch request: ', error.message);
     }
   }
 
